@@ -1,0 +1,26 @@
+[Unit]
+Description=MongoDB backup scheduler (backupd)
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=backupd
+Group=backupd
+EnvironmentFile=/etc/backupd/backupd.env
+ExecStart=/usr/local/bin/backupd run
+Restart=on-failure
+RestartSec=5s
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+MemoryDenyWriteExecute=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,27 @@
+[package]
+name = "backupd"
+version = "0.1.0"
+edition = "2024"
+license = "AGPL-3"
+description = "Streamed backup service for MongoDB and S3 buckets with compression/encryption support"
+
+[dependencies]
+anyhow = "=1.0.98"
+argon2 = "=0.5.3"
+async-trait = "=0.1.88"
+aes-gcm = "=0.10.3"
+aws-sdk-s3 = "=1.63.0"
+chrono = { version = "=0.4.41", features = ["serde"] }
+clap = { version = "=4.5.37", features = ["derive", "env"] }
+hex = "=0.4.3"
+rand = "=0.8.5"
+reqwest = { version = "=0.12.15", default-features = false, features = ["json", "rustls-tls"] }
+serde = { version = "=1.0.219", features = ["derive"] }
+serde_json = "=1.0.140"
+sha2 = "=0.10.8"
+thiserror = "=2.0.12"
+tokio = { version = "=1.45.0", features = ["full"] }
+tracing = "=0.1.41"
+tracing-subscriber = { version = "=0.3.19", features = ["env-filter", "json"] }
+url = "=2.5.4"
+uuid = { version = "=1.16.0", features = ["v4", "serde"] }
