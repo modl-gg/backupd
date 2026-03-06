@@ -166,6 +166,7 @@ impl AppConfig {
             .region(Region::new(self.backblaze.region.clone()))
             .endpoint_url(self.backblaze.endpoint.clone())
             .force_path_style(true)
+            .behavior_version_latest()
             .build();
 
         S3Client::from_conf(conf)

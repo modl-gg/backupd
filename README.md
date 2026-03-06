@@ -15,6 +15,11 @@ Rust backup daemon that:
 sudo ./scripts/install.sh
 ```
 
+## Update binary only
+```bash
+sudo ./scripts/update-binary.sh
+```
+
 ## Uninstall
 ```bash
 sudo ./scripts/uninstall.sh
